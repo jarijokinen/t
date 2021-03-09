@@ -1,0 +1,20 @@
+{
+  "apiVersion": 2,
+  "name": "t/section",
+  "title": "Section",
+  "category": "design",
+  "attributes": {
+    "backgroundColor": {
+      "type": "string",
+      "default": null
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": null
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": null
+    }
+  }
+}

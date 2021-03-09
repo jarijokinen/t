@@ -1,0 +1,11 @@
+.section {
+  background-image: none;
+  background-color: #222;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+}
+.section > .overlay {
+  padding: 100px 0;
+}
