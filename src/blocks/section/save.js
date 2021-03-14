@@ -1,4 +1,5 @@
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { buildOverlayStyle } from './buildOverlayStyle';
 
 const SaveSection = ({ attributes }) => {
   const blockProps = useBlockProps.save();
@@ -6,11 +7,10 @@ const SaveSection = ({ attributes }) => {
     backgroundColor: attributes.backgroundColor,
     backgroundImage: `url('${attributes.backgroundImage}')`
   };
-  const overlayStyle = {
-    backgroundColor: `rgba(0, 0, 0, ${
-      parseInt(attributes.overlayOpacity, 10) / 100
-    }`
-  };
+  const overlayStyle = buildOverlayStyle(
+    attributes.overlayColor,
+    attributes.overlayOpacity
+  );
   return (
     <>
       <section {...blockProps} className="section" style={sectionStyle}>

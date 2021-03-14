@@ -8,17 +8,19 @@ import {
 } from '@wordpress/block-editor';
 import { Button, PanelBody, RangeControl } from '@wordpress/components';
 
+import { buildOverlayStyle } from './buildOverlayStyle';
+
 const EditSection = ({ attributes, setAttributes }) => {
   const blockProps = useBlockProps();
   const sectionStyle = {
     backgroundColor: attributes.backgroundColor,
     backgroundImage: `url('${attributes.backgroundImage}')`
   };
-  const overlayStyle = {
-    backgroundColor: `rgba(0, 0, 0, ${
-      parseInt(attributes.overlayOpacity, 10) / 100
-    }`
-  };
+  const overlayStyle = buildOverlayStyle(
+    attributes.overlayColor,
+    attributes.overlayOpacity
+  );
+
   const inspectorControls = (
     <InspectorControls>
       <PanelBody title="Background">
@@ -36,6 +38,11 @@ const EditSection = ({ attributes, setAttributes }) => {
               value: attributes.backgroundColor,
               onChange: (val) => setAttributes({ backgroundColor: val }),
               label: 'Background Color'
+            },
+            {
+              value: attributes.overlayColor,
+              onChange: (val) => setAttributes({ overlayColor: val }),
+              label: 'Overlay Color'
             }
           ]}
         />

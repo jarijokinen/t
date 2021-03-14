@@ -12,6 +12,10 @@
       "type": "string",
       "default": null
     },
+    "overlayColor": {
+      "type": "string",
+      "default": null
+    },
     "overlayOpacity": {
       "type": "number",
       "default": null
