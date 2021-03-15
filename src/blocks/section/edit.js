@@ -14,7 +14,9 @@ const EditSection = ({ attributes, setAttributes }) => {
   const blockProps = useBlockProps();
   const sectionStyle = {
     backgroundColor: attributes.backgroundColor,
-    backgroundImage: `url('${attributes.backgroundImage}')`
+    backgroundImage: attributes.backgroundImage
+      ? `url('${attributes.backgroundImage}')`
+      : null
   };
   const overlayStyle = buildOverlayStyle(
     attributes.overlayColor,

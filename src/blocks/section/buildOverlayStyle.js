@@ -9,7 +9,9 @@ export const buildOverlayStyle = (overlayColor, overlayOpacity) => {
         .join(',')
     : '0,0,0';
 
-  return {
-    backgroundColor: `rgba(${rgb}, ${parseInt(overlayOpacity, 10) / 100})`
-  };
+  return overlayOpacity && overlayOpacity > 0
+    ? {
+        backgroundColor: `rgba(${rgb}, ${parseInt(overlayOpacity, 10) / 100})`
+      }
+    : null;
 };
