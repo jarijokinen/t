@@ -3,6 +3,12 @@
   max-width: 1160px;
   padding: 0 20px;
 }
+.container-full {
+  max-width: 100%;
+}
+.container-narrow {
+  max-width: 728px;
+}
 .container-center {
   align-items: center;
   display: flex;

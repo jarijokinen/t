@@ -25,6 +25,7 @@ function menu_classes($classes, $item, $args) {
   }
   return $new_classes;
 }
+
 add_filter('nav_menu_css_class', __NAMESPACE__ . '\menu_classes', 1, 3);
 add_filter('nav_menu_item_id', '__return_false');
 register_nav_menus(['main-menu' => __('Main Menu', 't')]);
