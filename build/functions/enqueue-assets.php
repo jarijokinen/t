@@ -3,11 +3,11 @@
 namespace t;
 
 function enqueue_assets() {
-  $css_uri = get_theme_file_uri('css/main.css') . '?1615858371544';
+  $css_uri = get_theme_file_uri('css/main.css') . '?1615859100861';
   wp_enqueue_style(__NAMESPACE__, $css_uri, array(), null);
 
   $js_uri = get_theme_file_uri('js/main.js');
-  wp_enqueue_script(__NAMESPACE__, $js_uri, null, '1615858371544', true);
+  wp_enqueue_script(__NAMESPACE__, $js_uri, null, '1615859100861', true);
 }
 
 function editor_assets() {

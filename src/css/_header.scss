@@ -97,3 +97,17 @@ $header-breakpoint: 768px;
 .has-fixed-header .header {
   position: fixed;
 }
+.has-integrated-header .section:first-of-type {
+  margin-top: -$header-height;
+}
+.has-integrated-header.at-top {
+  .header {
+    background: transparent;
+  }
+  .header-brand, .header a, .header-nav-toggle {
+    filter: invert(100%);
+  }
+  .header-nav-on a, .header-nav-on .header-nav-toggle {
+    filter: none;
+  }
+}

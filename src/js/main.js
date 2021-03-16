@@ -13,4 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.querySelector('.header-nav').appendChild(navToggle);
+
+  window.onscroll = () => {
+    if (
+      window.pageYOffset !== undefined
+        ? window.pageYOffset
+        : (
+            document.documentElement ||
+            document.body.parentNode ||
+            document.body
+          ).scroll > 50
+    ) {
+      body.classList.remove('at-top');
+    } else {
+      body.classList.add('at-top');
+    }
+  };
 });
