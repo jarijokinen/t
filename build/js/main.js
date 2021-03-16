@@ -1,0 +1,1 @@
+!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelector("body"),t=document.querySelector(".header-nav"),n=document.createElement("div");n.classList.add("header-nav-toggle"),n.onclick=function(){t.classList.toggle("header-nav-on"),e.classList.toggle("noscroll")},document.querySelector(".header-nav").appendChild(n)}))}();
