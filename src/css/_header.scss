@@ -15,6 +15,10 @@ $header-breakpoint: 768px;
   width: 100%;
   z-index: 99999;
 }
+.header, .header * {
+  transition-duration: 0.2s;
+  transition-property: all;
+}
 .header-brand {
   color: #000;
   float: left;
