@@ -23,6 +23,10 @@
     "overlayOpacity": {
       "type": "number",
       "default": null
+    },
+    "textColor": {
+      "type": "string",
+      "default": null
     }
   }
 }

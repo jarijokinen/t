@@ -28,6 +28,7 @@ const EditSection = ({ attributes, setAttributes }) => {
     backgroundImage: attributes.backgroundImage
       ? `url('${attributes.backgroundImage}')`
       : null,
+    color: attributes.textColor,
     minHeight: attributes.minimumHeight,
     ...overlayStyle
   };
@@ -49,6 +50,11 @@ const EditSection = ({ attributes, setAttributes }) => {
               value: attributes.backgroundColor,
               onChange: (val) => setAttributes({ backgroundColor: val }),
               label: 'Background Color'
+            },
+            {
+              value: attributes.textColor,
+              onChange: (val) => setAttributes({ textColor: val }),
+              label: 'Text Color'
             },
             {
               value: attributes.overlayColor,

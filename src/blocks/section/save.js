@@ -14,6 +14,7 @@ const SaveSection = ({ attributes }) => {
     backgroundImage: attributes.backgroundImage
       ? `url('${attributes.backgroundImage}')`
       : null,
+    color: attributes.textColor,
     minHeight: attributes.minimumHeight,
     ...overlayStyle
   };
