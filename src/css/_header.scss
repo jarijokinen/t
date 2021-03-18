@@ -57,6 +57,7 @@ $header-breakpoint: 768px;
   display: block;
   height: $header-nav-toggle-size;
   position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   width: $header-nav-toggle-size;
   z-index: 99999;
   @media(min-width: $header-breakpoint) {
