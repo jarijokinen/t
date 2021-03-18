@@ -11,7 +11,9 @@ export const buildOverlayStyle = (overlayColor, overlayOpacity) => {
 
   return overlayOpacity && overlayOpacity > 0
     ? {
-        backgroundColor: `rgba(${rgb}, ${parseInt(overlayOpacity, 10) / 100})`
+        boxShadow: `inset 0 0 0 100vmax rgba(${rgb}, ${
+          parseInt(overlayOpacity, 10) / 100
+        })`
       }
     : null;
 };

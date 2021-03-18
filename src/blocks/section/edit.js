@@ -6,22 +6,31 @@ import {
   PanelColorSettings,
   useBlockProps
 } from '@wordpress/block-editor';
-import { Button, PanelBody, RangeControl } from '@wordpress/components';
+import {
+  Button,
+  PanelBody,
+  RangeControl,
+  TextControl
+} from '@wordpress/components';
 
 import { buildOverlayStyle } from './buildOverlayStyle';
 
 const EditSection = ({ attributes, setAttributes }) => {
   const blockProps = useBlockProps();
-  const sectionStyle = {
-    backgroundColor: attributes.backgroundColor,
-    backgroundImage: attributes.backgroundImage
-      ? `url('${attributes.backgroundImage}')`
-      : null
-  };
   const overlayStyle = buildOverlayStyle(
     attributes.overlayColor,
     attributes.overlayOpacity
   );
+  const sectionStyle = {
+    backgroundColor: attributes.backgroundImage
+      ? null
+      : attributes.backgroundColor,
+    backgroundImage: attributes.backgroundImage
+      ? `url('${attributes.backgroundImage}')`
+      : null,
+    minHeight: attributes.minimumHeight,
+    ...overlayStyle
+  };
 
   const inspectorControls = (
     <InspectorControls>
@@ -56,6 +65,11 @@ const EditSection = ({ attributes, setAttributes }) => {
           max={100}
           step={5}
         />
+        <TextControl
+          label="Minimum Height"
+          value={attributes.minimumHeight}
+          onChange={(val) => setAttributes({ minimumHeight: val })}
+        />
       </PanelBody>
     </InspectorControls>
   );
@@ -63,10 +77,8 @@ const EditSection = ({ attributes, setAttributes }) => {
     <>
       {inspectorControls}
       <section {...blockProps} className="section" style={sectionStyle}>
-        <div className="overlay" style={overlayStyle}>
-          <div className="container">
-            <InnerBlocks />
-          </div>
+        <div className="container">
+          <InnerBlocks />
         </div>
       </section>
     </>

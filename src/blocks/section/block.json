@@ -12,6 +12,10 @@
       "type": "string",
       "default": null
     },
+    "minimumHeight": {
+      "type": "string",
+      "default": null
+    },
     "overlayColor": {
       "type": "string",
       "default": null
