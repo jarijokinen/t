@@ -24,6 +24,10 @@
       "type": "number",
       "default": null
     },
+    "padding": {
+      "type": "string",
+      "default": null
+    },
     "textColor": {
       "type": "string",
       "default": null

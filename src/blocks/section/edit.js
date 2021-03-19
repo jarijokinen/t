@@ -30,6 +30,7 @@ const EditSection = ({ attributes, setAttributes }) => {
       : null,
     color: attributes.textColor,
     minHeight: attributes.minimumHeight,
+    padding: `${attributes.padding} 0`,
     ...overlayStyle
   };
 
@@ -75,6 +76,11 @@ const EditSection = ({ attributes, setAttributes }) => {
           label="Minimum Height"
           value={attributes.minimumHeight}
           onChange={(val) => setAttributes({ minimumHeight: val })}
+        />
+        <TextControl
+          label="Padding for top and bottom"
+          value={attributes.padding}
+          onChange={(val) => setAttributes({ padding: val })}
         />
       </PanelBody>
     </InspectorControls>

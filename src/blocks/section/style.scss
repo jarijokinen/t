@@ -4,4 +4,8 @@
   background-position: center;
   display: flex;
   justify-content: center;
+  padding: 60px 0;
+  @media(min-width: 768px) {
+    padding: 100px 0;
+  }
 }

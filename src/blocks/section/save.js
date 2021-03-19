@@ -16,6 +16,7 @@ const SaveSection = ({ attributes }) => {
       : null,
     color: attributes.textColor,
     minHeight: attributes.minimumHeight,
+    padding: `${attributes.padding} 0`,
     ...overlayStyle
   };
   return (

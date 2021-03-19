@@ -28,6 +28,27 @@ function block_types() {
   register_block_type('section');
 }
 
+function default_block_type() {
+  $post_type_object = get_post_type_object('page');
+  $post_type_object->template = [
+    [__NAMESPACE__ . '/section']
+  ];
+}
+
+function allowed_block_types($allowed_block_types, $post) {
+  switch ($post->post_type) {
+    case 'page':
+      $allowed_block_types = [
+        __NAMESPACE__ . '/section',
+        'core/paragraph'
+      ];
+  }
+
+  return $allowed_block_types;
+}
+
 add_action('init', __NAMESPACE__ . '\block_types');
+add_action('init', __NAMESPACE__ . '\default_block_type');
+add_action('allowed_block_types', __NAMESPACE__ . '\allowed_block_types', 10, 2);
 
 ?>
