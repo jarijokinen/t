@@ -40,6 +40,7 @@ function allowed_block_types($allowed_block_types, $post) {
     case 'page':
       $allowed_block_types = [
         __NAMESPACE__ . '/section',
+        'core/heading',
         'core/paragraph'
       ];
   }
